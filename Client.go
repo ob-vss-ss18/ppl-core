@@ -27,13 +27,14 @@ func request(sitename string) bool {
 }
 
 func main() {
-	services := [6]string{
+	services := [7]string{
 		"https://ppl-customer.herokuapp.com/",
 		"https://ppl-pricecalculator.herokuapp.com/",
 		"https://ppl-billingandmailing.herokuapp.com/",
 		"https://ppl-leasing.herokuapp.com/",
 		"https://ppl-stock.herokuapp.com/",
 		"https://ppl-reservation.herokuapp.com/",
+		"https://ppl-auth.herokuapp.com/",
 	}
 	connected := 0
 	for _, service := range services {
@@ -42,5 +43,5 @@ func main() {
 		}
 	}
 	fmt.Print("Done.\n")
-	fmt.Printf("Successful connections: %d out of 6", connected)
+	fmt.Printf("Successful connections: %d out of 7", connected)
 }
