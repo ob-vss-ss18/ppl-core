@@ -1,6 +1,8 @@
 ```graphql
 input Calculation {
   type: CalcType
+  items: [Item]
+  family_discount: Int
 }
 
 enum CalcType {
