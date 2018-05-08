@@ -1,5 +1,7 @@
 # Status Updates
 
+08.05. - 14.05.
+
 01.05. - 07.05.
 
 * API Design
