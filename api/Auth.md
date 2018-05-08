@@ -12,7 +12,13 @@ enum UserRole {
   CUSTOMER
 }
 
-query User {
+type Query {
   user(user: User): User
+}
+
+type Mutation {
+  requestToken(email: String!): Boolean
+  loginPwd(email: String!, password: String!): User
+  loginToken(email: String!, token: String): User
 }
 ```

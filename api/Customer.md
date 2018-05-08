@@ -22,4 +22,9 @@ enum Skill {
   ADVANCED
   PRO
 }
+
+type Query {
+  customer(id: Int!): Customer
+}
+
 ```
