@@ -10,14 +10,11 @@ type Ski {
   length: Int
   bodyheight: Int
   bodyweight: Int
-  radius: Float
   color: String
   price_new: Float
   usage_state: State
-}
-
-type Binding {
-
+  condition: Condition
+  availability: Availability
 }
 
 enum Usage {
@@ -53,12 +50,18 @@ enum Sex {
   BOY
 }
 
-enum State {
+enum Condition {
   NEW
   USED
   DEFECT
-  DISPOSED
+}
+
+enum Availability {
+  AVAILABLE
+  RESERVED
+  LEASED
   SOLD
+  DISPOSED
 }
 
 ```
