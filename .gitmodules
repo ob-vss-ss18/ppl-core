@@ -1,0 +1,24 @@
+[submodule "ppl-client"]
+	path = ppl-client
+	url = https://github.com/ob-vss-ss18/ppl-client
+[submodule "ppl-customer"]
+	path = ppl-customer
+	url = https://github.com/ob-vss-ss18/ppl-customer
+[submodule "ppl-stock"]
+	path = ppl-stock
+	url = https://github.com/ob-vss-ss18/ppl-stock
+[submodule "ppl-auth"]
+	path = ppl-auth
+	url = https://github.com/ob-vss-ss18/ppl-auth
+[submodule "ppl-leasing"]
+	path = ppl-leasing
+	url = https://github.com/ob-vss-ss18/ppl-leasing
+[submodule "ppl-pricecalculator"]
+	path = ppl-pricecalculator
+	url = https://github.com/ob-vss-ss18/ppl-pricecalculator
+[submodule "ppl-billingandmailing"]
+	path = ppl-billingandmailing
+	url = https://github.com/ob-vss-ss18/ppl-billingandmailing
+[submodule "ppl-reservation"]
+	path = ppl-reservation
+	url = https://github.com/ob-vss-ss18/ppl-reservation
