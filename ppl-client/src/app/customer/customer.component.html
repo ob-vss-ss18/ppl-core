@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="regentry" *ngIf="showNew">
+        <form (ngSubmit)="onSave()">
+            <div class="form-group row">
+                <label for="firstname-input" class="col-2 col-form-label">Vorname</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.firstName" name="firstName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastname-input" class="col-2 col-form-label">Nachname</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.lastName" name="lastName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dob-input" class="col-2 col-form-label">Geburtstag</label>
+                <div class="col-3 input-group">
+                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dob" [(ngModel)]="regModel.dob" ngbDatepicker #dob="ngbDatepicker">
+                    <button class="input-group-addon" (click)="dob.toggle()" type="button">
+                        <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+                    </button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-email-input" class="col-2 col-form-label">Email</label>
+                <div class="col-10">
+                    <input class="form-control" type="email" [(ngModel)]="regModel.email" name="email">
+                </div>
+            </div>
+            <!-- <div class="form-group row">
+                  <label for="example-password-input" class="col-2 col-form-label">Password</label>
+                  <div class="col-10">
+                    <input class="form-control" type="password" [(ngModel)]="regModel.password" name="password">
+                  </div>
+                </div> -->
+            <div class="form-group row">
+                <label for="street-input" class="col-2 col-form-label">Strasse</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.street" name="street">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="housenumber-input" class="col-2 col-form-label">Hausnummer</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.housenumber" name="housenumber">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="postalcode-input" class="col-2 col-form-label">PLZ</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.postalcode" name="postalcode">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="city-input" class="col-2 col-form-label">Ort</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.city" name="city">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">{{submitType}}</button>
+            <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+        </form>
+    </div>
+    <br>
+
+
+    <div class="reglist" *ngIf="!showNew">
+        <form class="form-inline my-2 my-lg-0" class="text-right">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search-TODO</button>
+        </form>
+        <br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th>#</th> -->
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Geburtstag</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers; let i = index">
+                    <!-- <th scope="row">{{ i + 1 }}</th> -->
+                    <td>{{ customer.firstName }}</td>
+                    <td>{{ customer.lastName }}</td>
+                    <td>{{ customer.dob | date:"dd/MM/yyyy"}}</td>
+                    <!-- <td>{{ customer.dob.day + '/' + customer.dob.month + '/' + customer.dob.year}}</td> -->
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.street }} {{ customer.housenumber }}, {{ customer.postalcode }} {{ customer.city }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info" (click)="onEdit(i)">Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary" (click)="onNew()">New</button>
+        </div>
+    </div>
+
+</div>

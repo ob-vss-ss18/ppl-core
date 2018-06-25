@@ -1,0 +1,25 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "c1sqhKX+EHllakLDLWEEzbH9Dyc=",
+			"path": "github.com/lib/pq",
+			"revision": "d34b9ff171c21ad295489235aec8b6626023cd04",
+			"revisionTime": "2018-03-27T07:18:24Z"
+		},
+		{
+			"checksumSHA1": "GX2hcQP8YqrXH+laJJIxUFsqoxU=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "d34b9ff171c21ad295489235aec8b6626023cd04",
+			"revisionTime": "2018-03-27T07:18:24Z"
+		},
+		{
+			"checksumSHA1": "XuTsmaS5ADPz69CBCFiU2mb1bAM=",
+			"path": "github.com/graphql-go/graphql",
+			"revision": "51e8a07b6f0348c492363059ce33f9a91f75f3f9",
+			"revisionTime": "2018-04-16T15:35:35Z"
+		}
+	],
+	"rootPath": "github.com/ob-vss-ss18/ppl-stock"
+}

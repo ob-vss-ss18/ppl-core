@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+body {
+    background: #262626;
+    color:#fff;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    margin:0;
+}
+
+
+button {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    float:left;
+    background:rgb(193, 238, 255);
+    border:none;
+    border-radius: 5px;
+    color:rgb(51, 49, 49);
+    padding:10px;
+    margin-right: 30px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:rgb(205, 238, 255);
+    color:rgb(51, 49, 49);
+}

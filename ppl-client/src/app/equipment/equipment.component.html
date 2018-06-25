@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="regentry" *ngIf="showNew">
+        <form (ngSubmit)="onSave()">
+            <div class="form-group row">
+                <label for="manufacturer-input" class="col-2 col-form-label">Hersteller</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.manufacturer" name="manufacturer">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="modell-input" class="col-2 col-form-label">Modell</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.modell" name="modell">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="length-input" class="col-2 col-form-label">Länge</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.length" name="length">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-bodyheight-input" class="col-2 col-form-label">Körpergröße</label>
+                <div class="col-10">
+                    <input class="form-control" type="bodyheight" [(ngModel)]="regModel.bodyheight" name="bodyheight">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="bodyweight-input" class="col-2 col-form-label">Körpergewicht</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.bodyweight" name="bodyweight">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="price_new-input" class="col-2 col-form-label">Preis</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.price_new" name="price_new">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="availability-input" class="col-2 col-form-label">Verfügbar</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="regModel.availability" name="availability">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">{{submitType}}</button>
+            <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+        </form>
+    </div>
+    <br>
+
+
+    <div class="reglist" *ngIf="!showNew">
+        <form class="form-inline my-2 my-lg-0" class="text-right">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search-TODO</button>
+        </form>
+        <br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th>#</th> -->
+                    <th>Hersteller</th>
+                    <th>Modell</th>
+                    <th>Länge</th>
+                    <th>Körpergröße</th>
+                    <th>Körpergewicht</th>
+                    <th>Preis</th>
+                    <th>Verfügbar</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ski of skis; let i = index">
+                    <!-- <th scope="row">{{ i + 1 }}</th> -->
+                    <td>{{ ski.manufacturer }}</td>
+                    <td>{{ ski.modell }}</td>
+                    <td>{{ ski.length }}</td>
+                    <td>{{ ski.bodyheight }}</td>
+                    <td>{{ ski.bodyweight }}</td>
+                    <td>{{ ski.price_new }}</td>
+                    <td>{{ ski.availability }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info" (click)="onEdit(i)">Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary" (click)="onNew()">New</button>
+        </div>
+    </div>
+
+</div>

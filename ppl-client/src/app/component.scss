@@ -1,0 +1,86 @@
+//Header
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+#header {
+  background:#343a40;
+  color:white;
+  padding:15px;
+}
+
+#headn { 
+  text-align:center;
+  font-family:'Ubuntu';
+}
+  
+//sidebar 
+#sidebar-wrapper {
+  z-index:1000;
+  position:fixed;
+  left:250px;
+  width:0;
+  height:100%;
+  margin-left:-250px;
+  overflow-y:auto;
+  background:#343a40;
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+  font-family:'Ubuntu';
+}
+
+
+
+.sidebar-nav {
+  position:absolute;
+  top:0;
+  width:250px;
+  margin:0;
+  padding:0;
+  list-style:none;
+ 
+}
+
+.sidebar-nav li {
+  text-indent:20px;
+  line-height:40px;
+}
+
+.sidebar-nav li a {
+  display:block;
+  text-decoration:none;
+  color:#b3b1b1;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration:none;
+  color:#fff;
+  background:rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration:none;
+}
+
+
+@media (min-width:768px) {
+  #wrapper {
+    padding-left:230px;
+  }
+}
+
+@media (min-width:768px) {
+  #sidebar-wrapper {
+    width:200px; 
+  }
+}
+
+
+.page-content-wrapper {
+  min-inline-size: 1500px;
+}
+  
+
+.card-body {
+  max-inline-size: 500px;
+}
